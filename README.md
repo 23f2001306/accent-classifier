@@ -13,6 +13,15 @@ WAV audio → 16 kHz mono audio → 13 MFCCs → mean + standard deviation
 
 ## Install
 
+Create and activate a virtual environment (PowerShell):
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+Then install the dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -55,10 +64,19 @@ The script prints the number of usable training samples and discovered classes.
 With `accent_model.pkl` (or `model.pkl`) beside `app.py`, start the app with:
 
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 Upload a `.wav` speech clip, listen to the playback, then select **Predict Accent**. The app shows the most likely accent and the probability for each class.
+
+## Deploy on Streamlit Community Cloud
+
+1. Ensure `accent_model.pkl` is in this project directory. It must be included in the GitHub repository so the deployed app can load it.
+2. Create a GitHub repository and push this project folder to it.
+3. Go to [share.streamlit.io](https://share.streamlit.io/), sign in with GitHub, and choose **Create app**.
+4. Select the repository and branch, set the entrypoint file to `app.py`, then select **Deploy**.
+
+For a large binary model, store it with Git LFS. Streamlit Community Cloud supports repositories using Git LFS.
 
 ## Limitations
 

@@ -6,6 +6,5 @@ venv/
 .streamlit/secrets.toml
 *.wav
 
-# Trained model files are kept local.
-model.pkl
-accent_model.pkl
+# Keep deployment model files in the repository so Streamlit Community Cloud
+# can load them. Use Git LFS instead if the model becomes large.
