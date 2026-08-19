@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.deps/
+.streamlit/secrets.toml
+*.wav
+
+# Trained model files are kept local.
+model.pkl
+accent_model.pkl
